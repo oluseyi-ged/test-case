@@ -14,6 +14,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import styles from './styles';
 
 interface IButton extends TouchableOpacityProps {
   color?: ViewStyle['backgroundColor'];
@@ -123,7 +124,7 @@ export const Button = ({
   return (
     <TouchableOpacity
       // @ts-ignore
-      style={buttonStyle}
+      style={[buttonStyle, style]}
       disabled={disabled}
       activeOpacity={activeOpacity}
       onPress={handlePress}
@@ -135,7 +136,7 @@ export const Button = ({
           <View
             style={{flexDirection: 'row', alignItems: 'center', gap: HDP(6)}}>
             {iconName && (
-              <View style={[style.iconContainer, iconContainerStyle]}>
+              <View style={[styles.iconContainer, iconContainerStyle]}>
                 <SvgIcon name={iconName} size={iconSize || 20} />
                 <SizedBox width={HDP(12)} />
               </View>

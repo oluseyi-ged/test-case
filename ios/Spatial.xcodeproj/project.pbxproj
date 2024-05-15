@@ -12,13 +12,14 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		280352F5D35E4DCCA4360FD9 /* OatmealPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B029D06845814047B6347289 /* OatmealPro-Medium.ttf */; };
+		433851F8EBC54DE18007FE7E /* OatmealPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A357381C48814296ADC57A18 /* OatmealPro-Bold.ttf */; };
+		760674B29C8E43ACB9079FDA /* OatmealPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A5D26C6A4FE4867AAC98320 /* OatmealPro-Light.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-Spatial-SpatialTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Spatial-SpatialTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9B49DE479A2A4443BA71E562 /* SplineSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6D4016635764E13A020CB9D /* SplineSans-Bold.ttf */; };
-		7D9677AFAE0D4276A511249B /* SplineSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3D587C7A3944194B07DC2FA /* SplineSans-Light.ttf */; };
-		4DFD81791B744021A498FF2E /* SplineSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B7B22A1DD214544BADAE030 /* SplineSans-Medium.ttf */; };
-		859508717B6640D68CC55743 /* SplineSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90A901300AA04F60AB6CFE71 /* SplineSans-Regular.ttf */; };
-		00CD3B6202D0417EB8E40E0B /* SplineSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 032AB329FCB947D2ABCD66D6 /* SplineSans-SemiBold.ttf */; };
+		AA94577771F24127977A4B7F /* OatmealPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE5678478D1D40B899847E17 /* OatmealPro-Regular.ttf */; };
+		B59B91814EC84CABAF0CF709 /* OatmealPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A72DE94E09C406C80C89016 /* OatmealPro-ExtraLight.ttf */; };
+		DA4D36456273481F91AA09BA /* OatmealPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BAEE44A36C14B4794F21083 /* OatmealPro-Semibold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,34 +28,35 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = "Spatial";
+			remoteInfo = Spatial;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* SpatialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpatialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* SpatialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpatialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* SpatialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SpatialTests.m"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Spatial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spatial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Spatial/AppDelegate.h"; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = "Spatial/AppDelegate.mm"; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Spatial/Images.xcassets"; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Spatial/Info.plist"; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Spatial/main.m"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* SpatialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpatialTests.m; sourceTree = "<group>"; };
+		0BAEE44A36C14B4794F21083 /* OatmealPro-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Semibold.ttf"; path = "../src/assets/fonts/OatmealPro-Semibold.ttf"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Spatial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spatial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Spatial/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Spatial/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Spatial/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Spatial/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Spatial/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Spatial-SpatialTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spatial-SpatialTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-Spatial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spatial.debug.xcconfig"; path = "Target Support Files/Pods-Spatial/Pods-Spatial.debug.xcconfig"; sourceTree = "<group>"; };
+		4A72DE94E09C406C80C89016 /* OatmealPro-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-ExtraLight.ttf"; path = "../src/assets/fonts/OatmealPro-ExtraLight.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Spatial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spatial.release.xcconfig"; path = "Target Support Files/Pods-Spatial/Pods-Spatial.release.xcconfig"; sourceTree = "<group>"; };
+		5A5D26C6A4FE4867AAC98320 /* OatmealPro-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Light.ttf"; path = "../src/assets/fonts/OatmealPro-Light.ttf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Spatial-SpatialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spatial-SpatialTests.debug.xcconfig"; path = "Target Support Files/Pods-Spatial-SpatialTests/Pods-Spatial-SpatialTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Spatial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spatial.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Spatial/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Spatial/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Spatial-SpatialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spatial-SpatialTests.release.xcconfig"; path = "Target Support Files/Pods-Spatial-SpatialTests/Pods-Spatial-SpatialTests.release.xcconfig"; sourceTree = "<group>"; };
+		A357381C48814296ADC57A18 /* OatmealPro-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Bold.ttf"; path = "../src/assets/fonts/OatmealPro-Bold.ttf"; sourceTree = "<group>"; };
+		B029D06845814047B6347289 /* OatmealPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Medium.ttf"; path = "../src/assets/fonts/OatmealPro-Medium.ttf"; sourceTree = "<group>"; };
 		B0875BB22B66BDA60096ADA6 /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		C6D4016635764E13A020CB9D /* SplineSans-Bold.ttf */ = {isa = PBXFileReference; name = "SplineSans-Bold.ttf"; path = "../src/assets/fonts/SplineSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E3D587C7A3944194B07DC2FA /* SplineSans-Light.ttf */ = {isa = PBXFileReference; name = "SplineSans-Light.ttf"; path = "../src/assets/fonts/SplineSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1B7B22A1DD214544BADAE030 /* SplineSans-Medium.ttf */ = {isa = PBXFileReference; name = "SplineSans-Medium.ttf"; path = "../src/assets/fonts/SplineSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		90A901300AA04F60AB6CFE71 /* SplineSans-Regular.ttf */ = {isa = PBXFileReference; name = "SplineSans-Regular.ttf"; path = "../src/assets/fonts/SplineSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		032AB329FCB947D2ABCD66D6 /* SplineSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "SplineSans-SemiBold.ttf"; path = "../src/assets/fonts/SplineSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EE5678478D1D40B899847E17 /* OatmealPro-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OatmealPro-Regular.ttf"; path = "../src/assets/fonts/OatmealPro-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,7 @@
 				00E356F21AD99517003FC87E /* SpatialTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = "SpatialTests";
+			path = SpatialTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -104,7 +106,21 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = "Spatial";
+			name = Spatial;
+			sourceTree = "<group>";
+		};
+		222E6440A988451C946313FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A357381C48814296ADC57A18 /* OatmealPro-Bold.ttf */,
+				4A72DE94E09C406C80C89016 /* OatmealPro-ExtraLight.ttf */,
+				5A5D26C6A4FE4867AAC98320 /* OatmealPro-Light.ttf */,
+				B029D06845814047B6347289 /* OatmealPro-Medium.ttf */,
+				EE5678478D1D40B899847E17 /* OatmealPro-Regular.ttf */,
+				0BAEE44A36C14B4794F21083 /* OatmealPro-Semibold.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -161,19 +177,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		222E6440A988451C946313FD /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				C6D4016635764E13A020CB9D /* SplineSans-Bold.ttf */,
-				E3D587C7A3944194B07DC2FA /* SplineSans-Light.ttf */,
-				1B7B22A1DD214544BADAE030 /* SplineSans-Medium.ttf */,
-				90A901300AA04F60AB6CFE71 /* SplineSans-Regular.ttf */,
-				032AB329FCB947D2ABCD66D6 /* SplineSans-SemiBold.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,8 +196,7 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = "SpatialTests";
-			productname = "SpatialTests";
+			name = SpatialTests;
 			productReference = 00E356EE1AD99517003FC87E /* SpatialTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -214,8 +216,8 @@
 			);
 			dependencies = (
 			);
-			name = "Spatial";
-			productName = "Spatial";
+			name = Spatial;
+			productName = Spatial;
 			productReference = 13B07F961A680F5B00A75B9A /* Spatial.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -269,11 +271,12 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				9B49DE479A2A4443BA71E562 /* SplineSans-Bold.ttf in Resources */,
-				7D9677AFAE0D4276A511249B /* SplineSans-Light.ttf in Resources */,
-				4DFD81791B744021A498FF2E /* SplineSans-Medium.ttf in Resources */,
-				859508717B6640D68CC55743 /* SplineSans-Regular.ttf in Resources */,
-				00CD3B6202D0417EB8E40E0B /* SplineSans-SemiBold.ttf in Resources */,
+				433851F8EBC54DE18007FE7E /* OatmealPro-Bold.ttf in Resources */,
+				B59B91814EC84CABAF0CF709 /* OatmealPro-ExtraLight.ttf in Resources */,
+				760674B29C8E43ACB9079FDA /* OatmealPro-Light.ttf in Resources */,
+				280352F5D35E4DCCA4360FD9 /* OatmealPro-Medium.ttf in Resources */,
+				AA94577771F24127977A4B7F /* OatmealPro-Regular.ttf in Resources */,
+				DA4D36456273481F91AA09BA /* OatmealPro-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +451,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "SpatialTests/Info.plist";
+				INFOPLIST_FILE = SpatialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -460,7 +463,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spatial.app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spatial.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spatial.app/Spatial";
 			};
@@ -472,7 +475,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = "SpatialTests/Info.plist";
+				INFOPLIST_FILE = SpatialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,7 +487,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spatial.app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spatial.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spatial.app/Spatial";
 			};
@@ -498,8 +501,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "Spatial/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "Spatial";
+				INFOPLIST_FILE = Spatial/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Spatial;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,8 +513,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spatial.app";
-				PRODUCT_NAME = "Spatial";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spatial.app;
+				PRODUCT_NAME = Spatial;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -525,8 +528,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = "Spatial/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "Spatial";
+				INFOPLIST_FILE = Spatial/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Spatial;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,8 +540,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spatial.app";
-				PRODUCT_NAME = "Spatial";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spatial.app;
+				PRODUCT_NAME = Spatial;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -620,7 +623,7 @@
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
-				USE_HERMES = false;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -692,7 +695,7 @@
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
-				USE_HERMES = false;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

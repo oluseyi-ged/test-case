@@ -26,7 +26,7 @@ interface Props {
   maxLength?: number;
   placeholder?: any;
   inputErrMsg?: any;
-  bvnLength?: any;
+  charLength?: any;
   multiline?: boolean;
   keyboardType?:
     | 'default'
@@ -62,7 +62,6 @@ interface Props {
   isAmount?: boolean;
 }
 export const TextInput: FC<Props> = ({
-  padding = HDP(0),
   inputStyle,
   placeholder,
   placeholderTextColor = '#BABABB',
@@ -80,7 +79,7 @@ export const TextInput: FC<Props> = ({
   type,
   label,
   info,
-  bvnLength = 0,
+  charLength = 0,
   onChangeText,
   iconName1,
   iconName2,
@@ -145,7 +144,7 @@ export const TextInput: FC<Props> = ({
       <View
         style={[
           style.inputContainer,
-          {paddingHorizontal: padding},
+          // {paddingHorizontal: padding},
           inputStyle,
           bordered && style.bordered,
           focused && {borderColor: palette.mutedGreen},
@@ -169,10 +168,10 @@ export const TextInput: FC<Props> = ({
           placeholder={placeholder}
           style={[
             {
-              padding,
+              // padding,
               flex: 1,
               color: bordered ? '#fff' : '#082932',
-              fontSize: RF(14),
+              fontSize: RF(12),
             },
             innerStyle,
           ]}
@@ -223,9 +222,9 @@ export const TextInput: FC<Props> = ({
           <SizedBox height={8} />
         </>
       )}
-      {bvnLength > 0 && (
+      {charLength > 0 && (
         <Text style={[style.bvnLength]}>
-          {valueText} /{bvnLength}
+          {valueText} /{charLength}
         </Text>
       )}
       {error?.length ? (

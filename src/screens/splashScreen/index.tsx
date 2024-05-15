@@ -13,7 +13,7 @@ export const SplashScreen: FC = ({navigation}: any) => {
   useFocusEffect(
     React.useCallback(() => {
       setTimeout(() => {
-        navigation.navigate('Home');
+        navigation.navigate('Onboarding');
       }, 2300);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []),

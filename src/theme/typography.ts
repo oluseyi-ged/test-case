@@ -12,23 +12,27 @@ Available font weights
 
 export const family = {
   Light: Platform.select({
-    ios: 'SplineSans-Light', // The font family name
-    android: 'SplineSans-Light', // The file name
+    ios: 'OatmealPro-Light', // The font family name
+    android: 'OatmealPro-Light', // The file name
+  }),
+  XLight: Platform.select({
+    ios: 'OatmealPro-ExtraLight', // The font family name
+    android: 'OatmealPro-ExtraLight', // The file name
   }),
   Bold: Platform.select({
-    ios: 'SplineSans-Bold', // The font family name
-    android: 'SplineSans-Bold', // The file name
+    ios: 'OatmealPro-Bold', // The font family name
+    android: 'OatmealPro-Bold', // The file name
   }),
   Regular: Platform.select({
-    ios: 'SplineSans-Regular', // The font family name
-    android: 'SplineSans-Regular', // The file name
+    ios: 'OatmealPro-Regular', // The font family name
+    android: 'OatmealPro-Regular', // The file name
   }),
   Medium: Platform.select({
-    ios: 'SplineSans-Medium', // The font family name
-    android: 'SplineSans-Medium', // The file name
+    ios: 'OatmealPro-Medium', // The font family name
+    android: 'OatmealPro-Medium', // The file name
   }),
   SemiBold: Platform.select({
-    ios: 'SplineSans-SemiBold', // The font family name
-    android: 'SplineSans-SemiBold', // The file name
+    ios: 'OatmealPro-SemiBold', // The font family name
+    android: 'OatmealPro-SemiBold', // The file name
   }),
 };

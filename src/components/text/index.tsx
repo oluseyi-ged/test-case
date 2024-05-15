@@ -53,7 +53,7 @@ export const Text: FC<Props> = ({
   weight,
   fontWeight,
   center,
-  color,
+  color = '#151515',
   opacity,
   font,
   fontFamily = family.Regular,
@@ -72,18 +72,18 @@ export const Text: FC<Props> = ({
   ...props
 }) => {
   const textStyle = StyleSheet.flatten([
-    h1 && {fontSize: RF(38), fontFamily: '800'},
-    h2 && {fontSize: RF(32), fontFamily: '800'},
-    h3 && {fontSize: RF(28), fontFamily: '800'},
+    h1 && {fontSize: RF(38), fontFamily: family.Bold},
+    h2 && {fontSize: RF(32), fontFamily: family.Bold},
+    h3 && {fontSize: RF(28), fontFamily: family.Bold},
     h4 && {fontSize: RF(24), fontFamily: family.Medium},
     h5 && {fontSize: RF(18), fontFamily: family.Medium},
     h6 && {fontSize: RF(14), fontFamily: '600'},
     p && {fontSize: RF(14), fontFamily: family.Regular},
     center && {textAlign: 'center'},
     (align || textAlign) && {textAlign: textAlign || align},
-    bold && {fontWeight: '800'},
-    semibold && {fontWeight: '600'},
-    medium && {fontWeight: '500'},
+    bold && {fontWeight: family.Bold},
+    semibold && {fontWeight: family.SemiBold},
+    medium && {fontWeight: family.Medium},
     (weight || fontWeight) && {fontWeight: fontWeight || weight},
     (transform || textTransform) && {
       textTransform: textTransform || transform,
