@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/SplineSans-Bold.ttf",
+      "sha1": "74c4b14ca84d83f3d648b0717c61c766bf547783"
+    },
+    {
+      "path": "src/assets/fonts/SplineSans-Light.ttf",
+      "sha1": "70e91748453e53b1c95459da8d9f559c188556cc"
+    },
+    {
+      "path": "src/assets/fonts/SplineSans-Medium.ttf",
+      "sha1": "476898ebab388b9c9d58be87036bafe96f462ed0"
+    },
+    {
+      "path": "src/assets/fonts/SplineSans-Regular.ttf",
+      "sha1": "0610684994430e29b16b97ee4b7379095b864837"
+    },
+    {
+      "path": "src/assets/fonts/SplineSans-SemiBold.ttf",
+      "sha1": "66cd32da89b8f540dd0368c2e6af00a872ec60d6"
+    }
+  ]
+}
