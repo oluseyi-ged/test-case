@@ -8,13 +8,13 @@ import {
   Text,
   TextInput,
 } from '@components';
-import {HDP} from '@helpers';
+import { HDP } from '@helpers';
 import StorageHelper from '@helpers/StorageHelper';
-import {useFocusEffect} from '@react-navigation/native';
-import {Formik} from 'formik';
-import React, {FC, useRef, useState} from 'react';
-import {Dimensions, Image, TouchableOpacity, View} from 'react-native';
-import {Dropdown} from 'react-native-element-dropdown';
+import { useFocusEffect } from '@react-navigation/native';
+import { Formik } from 'formik';
+import React, { FC, useRef, useState } from 'react';
+import { Dimensions, Image, TouchableOpacity, View } from 'react-native';
+import { Dropdown } from 'react-native-element-dropdown';
 import * as yup from 'yup';
 import styles from './styles';
 
@@ -26,6 +26,8 @@ export const Home: FC = ({navigation}: any) => {
   const formRef = useRef<any>();
   const [updateTrigger, setUpdateTrigger] = useState(false);
   const [newIcon, setNewIcon] = useState('');
+
+  console.log(showModal, 'modal block')
 
   useFocusEffect(
     React.useCallback(() => {
