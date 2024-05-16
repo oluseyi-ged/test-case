@@ -1,29 +1,57 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {Text} from '@components';
+import {SvgIcon} from '@components';
+import StorageHelper from '@helpers/StorageHelper';
 import {useFocusEffect} from '@react-navigation/native';
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {View} from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {useAppDispatch} from 'store';
 import style from './styles';
 
 export const SplashScreen: FC = ({navigation}: any) => {
-  const dispatch = useAppDispatch();
+  const [user, setUser] = useState<any>({});
+
+  console.log(user);
 
   useFocusEffect(
     React.useCallback(() => {
-      setTimeout(() => {
-        navigation.navigate('Onboarding');
-      }, 2300);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      const fetchUserData = async () => {
+        try {
+          const userData = await StorageHelper.getItem(
+            StorageHelper.StorageKeys.USER,
+          );
+          if (userData) {
+            setUser(userData);
+          } else {
+            console.log('User data not found');
+          }
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+        } finally {
+          // setLoading(false);
+        }
+      };
+
+      fetchUserData();
     }, []),
+  );
+  useFocusEffect(
+    React.useCallback(() => {
+      setTimeout(() => {
+        if (user?.name?.length) {
+          navigation.navigate('Home');
+        } else {
+          navigation.navigate('Onboarding');
+        }
+      }, 3000);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [user]),
   );
 
   return (
     <View style={style.container}>
       <Animatable.View animation="flash" direction="normal" duration={2000}>
         <Animatable.View animation="fadeIn" duration={2300}>
-          <Text>Okay</Text>
+          <SvgIcon name="logo" size={160} />
         </Animatable.View>
       </Animatable.View>
     </View>

@@ -35,6 +35,7 @@ interface Props {
   bottom?: TextStyle['bottom'];
   left?: TextStyle['left'];
   style?: any;
+  onPress?: any;
 }
 
 export const Text: FC<Props> = ({
@@ -69,6 +70,7 @@ export const Text: FC<Props> = ({
   left,
   style,
   medium,
+  onPress,
   ...props
 }) => {
   const textStyle = StyleSheet.flatten([
@@ -106,6 +108,7 @@ export const Text: FC<Props> = ({
       allowFontScaling={true}
       adjustsFontSizeToFit={false}
       maxFontSizeMultiplier={1.2}
+      onPress={onPress}
       style={textStyle}
       {...props}>
       {children}

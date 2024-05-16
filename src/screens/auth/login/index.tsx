@@ -1,13 +1,27 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {Block, Button, SizedBox, SvgIcon, Text, TextInput} from '@components';
+import StorageHelper from '@helpers/StorageHelper';
+import {Formik} from 'formik';
 import React, {FC} from 'react';
-import {Dimensions} from 'react-native';
-import {useAppDispatch} from 'store';
+import * as yup from 'yup';
 import styles from './styles';
 
 export const Login: FC = ({navigation}: any) => {
-  const dispatch = useAppDispatch();
-  const width = Dimensions.get('window').width;
+  const initialValues = {
+    identifier: '',
+    password: '',
+  };
+
+  const initSchema = yup.object().shape({
+    identifier: yup
+      .string()
+      .email('Invalid email')
+      .required('Email is required'),
+    password: yup
+      .string()
+      .min(8, 'Password must be at least 8 characters')
+      .required('Password is required'),
+  });
 
   return (
     <Block safe style={styles.pageWrap}>
@@ -15,6 +29,7 @@ export const Login: FC = ({navigation}: any) => {
         <Block style={styles.btmBox}>
           <SvgIcon
             name="back"
+            onPress={() => navigation.goBack()}
             size={40}
             containerStyle={{alignSelf: 'flex-start'}}
           />
@@ -28,26 +43,64 @@ export const Login: FC = ({navigation}: any) => {
             Now, let’s create your Spatial iD to begin editing your Circle.
           </Text>
           <SizedBox height={32} />
-          <TextInput
-            onChangeText={txt => console.log(txt)}
-            placeholder="Email or Phone Number"
-          />
-          <SizedBox height={16} />
-          <TextInput
-            onChangeText={txt => console.log(txt)}
-            placeholder="Password"
-          />
-          <SizedBox height={24} />
+          <Formik
+            initialValues={initialValues}
+            onSubmit={async values => {
+              // Retrieve existing userData from AsyncStorage
+              const existingUserData = await StorageHelper.getItem(
+                StorageHelper.StorageKeys.USER,
+              );
 
-          <Button
-            radius={128}
-            onPress={() => navigation.navigate('Bio')}
-            justifyContent="center"
-            alignItems="center"
-            color="#151515"
-            // style={styles.btn}
-            title="Create Account"
-          />
+              // Update existingUserData with new form values
+              const updatedUserData = {...existingUserData, ...values};
+
+              // Save updatedUserData back to AsyncStorage
+              await StorageHelper.saveItem(
+                StorageHelper.StorageKeys.USER,
+                updatedUserData,
+              );
+
+              // proceed to bio screen
+              navigation.navigate('Bio');
+            }}
+            validateOnChange={false}
+            validateOnBlur={false}
+            validationSchema={initSchema}>
+            {({errors, setFieldValue, values, handleSubmit}) => (
+              <>
+                <TextInput
+                  onChangeText={value => {
+                    setFieldValue('identifier', value);
+                  }}
+                  placeholder="Email"
+                  error={errors.identifier}
+                  value={values.identifier}
+                  autoCorrect={false}
+                />
+                <SizedBox height={16} />
+                <TextInput
+                  onChangeText={value => {
+                    setFieldValue('password', value);
+                  }}
+                  placeholder="Password"
+                  error={errors.password}
+                  value={values.password}
+                  autoCorrect={false}
+                  type="password"
+                />
+                <SizedBox height={24} />
+
+                <Button
+                  radius={128}
+                  onPress={handleSubmit}
+                  justifyContent="center"
+                  alignItems="center"
+                  color="#151515"
+                  title="Create Account"
+                />
+              </>
+            )}
+          </Formik>
         </Block>
       </Block>
     </Block>

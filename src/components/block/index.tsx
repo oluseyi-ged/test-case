@@ -1,6 +1,11 @@
 import {HDP} from '@helpers';
 import React, {FC} from 'react';
-import {SafeAreaView, StyleSheet, View, ViewStyle} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  TouchableOpacity,
+  ViewStyle,
+} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 
 interface Props {
@@ -36,12 +41,16 @@ interface Props {
   };
   children?: React.ReactNode;
   style?: any;
+  onPress?: any;
+  ref?: any;
+  refreshControl?: any;
 }
 
 export const Block: FC<Props> = ({
   children,
   style,
   flex = 1,
+  ref,
   row,
   justify,
   justifyContent,
@@ -58,6 +67,7 @@ export const Block: FC<Props> = ({
   right,
   bottom,
   left,
+  onPress,
   // add the next props
   color,
   outlined,
@@ -67,6 +77,7 @@ export const Block: FC<Props> = ({
   safe,
   scroll,
   shadow,
+  refreshControl,
   ...props
 }) => {
   const blockStyle = StyleSheet.flatten([
@@ -116,7 +127,7 @@ export const Block: FC<Props> = ({
   // renders SafeAreaView if safe props is true
   if (safe) {
     return (
-      <SafeAreaView style={blockStyle} {...props}>
+      <SafeAreaView ref={ref} style={blockStyle} {...props}>
         {children}
       </SafeAreaView>
     );
@@ -125,8 +136,10 @@ export const Block: FC<Props> = ({
   // renders ScrollView if scroll props is true
   if (scroll) {
     return (
-      <SafeAreaView style={{flex: 1}} {...props}>
+      <SafeAreaView ref={ref} style={{flex: 1}} {...props}>
         <KeyboardAwareScrollView
+          refreshControl={refreshControl}
+          automaticallyAdjustContentInsets={false}
           keyboardShouldPersistTaps="handled"
           style={blockStyle}
           {...props}>
@@ -137,8 +150,13 @@ export const Block: FC<Props> = ({
   }
 
   return (
-    <View style={blockStyle} {...props}>
+    <TouchableOpacity
+      ref={ref}
+      disabled={!onPress}
+      onPress={onPress}
+      style={blockStyle}
+      {...props}>
       {children}
-    </View>
+    </TouchableOpacity>
   );
 };

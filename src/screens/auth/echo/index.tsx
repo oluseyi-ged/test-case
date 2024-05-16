@@ -1,14 +1,26 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {LogoGif} from '@assets/images';
 import {Block, Button, SizedBox, SvgIcon, Text, TextInput} from '@components';
-import React, {FC} from 'react';
-import {Dimensions, Image} from 'react-native';
-import {useAppDispatch} from 'store';
+import StorageHelper from '@helpers/StorageHelper';
+import {Formik} from 'formik';
+import React, {FC, useRef} from 'react';
+import {Image} from 'react-native';
+import * as yup from 'yup';
 import styles from './styles';
 
 export const Echo: FC = ({navigation}: any) => {
-  const dispatch = useAppDispatch();
-  const width = Dimensions.get('window').width;
+  const formRef = useRef<any>();
+
+  const initialValues = {
+    username: '',
+  };
+
+  const initSchema = yup.object().shape({
+    username: yup
+      .string()
+      .required('Username is required')
+      .min(3, 'Username must be at least 3 characters'),
+  });
 
   return (
     <Block safe style={styles.pageWrap}>
@@ -16,6 +28,7 @@ export const Echo: FC = ({navigation}: any) => {
         <Block style={styles.btmBox}>
           <SvgIcon
             name="back"
+            onPress={() => navigation.goBack()}
             size={40}
             containerStyle={{alignSelf: 'flex-start'}}
           />
@@ -29,23 +42,51 @@ export const Echo: FC = ({navigation}: any) => {
             experiences.
           </Text>
           <SizedBox height={24} />
-          <TextInput
-            onChangeText={txt => console.log(txt)}
-            placeholder="your-echo"
-            charLength={20}
-          />
+
+          <Formik
+            initialValues={initialValues}
+            innerRef={formRef}
+            onSubmit={async values => {
+              // Store the username in AsyncStorage
+              const userData = {username: values.username};
+              await StorageHelper.saveItem(
+                StorageHelper.StorageKeys.USER,
+                userData,
+              );
+
+              // Log the form values
+              console.log(values);
+              // Route to next page
+              navigation.navigate('Login');
+            }}
+            validateOnChange={false}
+            validateOnBlur={false}
+            validationSchema={initSchema}>
+            {({errors, setFieldValue, values}) => (
+              <>
+                <TextInput
+                  onChangeText={value => {
+                    setFieldValue('username', value);
+                  }}
+                  placeholder="your-echo"
+                  charLength={20}
+                  error={errors.username}
+                  value={values.username}
+                  autoCorrect={false}
+                />
+              </>
+            )}
+          </Formik>
         </Block>
-        <Block>
-          <Button
-            radius={128}
-            onPress={() => navigation.navigate('Login')}
-            justifyContent="center"
-            alignItems="center"
-            color="#151515"
-            style={styles.btn}
-            title="Claim"
-          />
-        </Block>
+        <Button
+          radius={128}
+          onPress={() => formRef?.current?.handleSubmit()}
+          justifyContent="center"
+          alignItems="center"
+          color="#151515"
+          style={styles.btn}
+          title="Claim"
+        />
       </Block>
     </Block>
   );

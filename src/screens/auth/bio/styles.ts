@@ -31,6 +31,26 @@ const style = StyleSheet.create({
     borderRadius: HDP(1000),
     alignSelf: 'center',
   },
+  optBox: {
+    backgroundColor: '#fff',
+    borderRadius: HDP(12),
+    width: width * 0.7,
+    alignSelf: 'center',
+    position: 'absolute',
+    top: HDP(120),
+    zIndex: 10000,
+    // marginTop: HDP(20),
+  },
+  optItem: {
+    padding: HDP(16),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  divide: {
+    width: '100%',
+    height: 1,
+    backgroundColor: '#11111140',
+  },
 });
 
 export default style;

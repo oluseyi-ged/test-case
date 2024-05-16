@@ -11,7 +11,7 @@ const style = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#004BFF',
+    backgroundColor: '#fff',
   },
   image: {
     marginVertical: 'auto',

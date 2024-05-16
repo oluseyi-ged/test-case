@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
-import {SizedBox} from '@components';
+import {SizedBox, SvgIcon} from '@components';
 // import {SvgIcon} from '@components/svg-icon';
 import {HDP, RF} from '@helpers';
 import {palette} from '@theme';
@@ -15,6 +15,7 @@ interface Props {
   onFocus?: () => void;
   onBlur?: () => void;
   onChangeText?: any;
+  onClear?: any;
   textAlignVertical?: 'auto' | 'top' | 'bottom' | 'center';
   value?: any;
   containerStyle?: any;
@@ -60,6 +61,7 @@ interface Props {
   labelStyle?: any;
   firstText?: any;
   isAmount?: boolean;
+  clearable?: boolean;
 }
 export const TextInput: FC<Props> = ({
   inputStyle,
@@ -97,6 +99,8 @@ export const TextInput: FC<Props> = ({
   error,
   labelStyle,
   firstText,
+  clearable,
+  onClear,
 }) => {
   const [focused, setFocused] = useState(false);
   const [valueText, setValueText] = useState(0);
@@ -149,9 +153,14 @@ export const TextInput: FC<Props> = ({
           bordered && style.bordered,
           focused && {borderColor: palette.mutedGreen},
         ]}>
-        {/* {iconName1 && (
-          <SvgIcon name={iconName1} size={iconSize1 || 20} onPress={onPress1} />
-        )} */}
+        {iconName1 && (
+          <SvgIcon
+            name={iconName1}
+            size={iconSize1 || 20}
+            onPress={onPress1}
+            containerStyle={{marginRight: HDP(24)}}
+          />
+        )}
         {firstText && (
           <Text
             style={[
@@ -203,18 +212,21 @@ export const TextInput: FC<Props> = ({
           autoFocus={shouldFocus}
           autoCorrect={autoCorrect}
         />
-        {/* {iconName2 && (
-          <SvgIcon name={iconName2} size={iconSize2 || 20} onPress={onPress2} />
+        {clearable && valueText > 0 && (
+          <>
+            <SvgIcon name="check" size={iconSize2 || 16} />
+            <SizedBox width={12} />
+            <SvgIcon
+              name="close"
+              size={16}
+              onPress={() => {
+                onClear();
+                setFormattedValue('');
+                setValueText(0);
+              }}
+            />
+          </>
         )}
-        {type === 'password' && (
-          <SvgIcon
-            name={secure ? 'eye-close' : 'eye-open'}
-            size={20}
-            onPress={() => {
-              setSecure(!secure);
-            }}
-          />
-        )} */}
       </View>
       {info && (
         <>

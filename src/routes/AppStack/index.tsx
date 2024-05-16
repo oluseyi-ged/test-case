@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {TabsStackScreens} from '@routes/Tabs';
+import {Home, Profile} from '@screens';
 import React from 'react';
 
 const AppStack = createNativeStackNavigator();
@@ -9,7 +9,14 @@ const AppStackScreens = ({navigation}) => {
     <AppStack.Navigator initialRouteName={'AppHome'}>
       <AppStack.Screen
         name="AppHome"
-        component={TabsStackScreens}
+        component={Home}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AppStack.Screen
+        name="Profile"
+        component={Profile}
         options={{
           headerShown: false,
         }}

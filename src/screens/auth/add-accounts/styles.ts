@@ -20,13 +20,19 @@ const style = StyleSheet.create({
   btn: {
     width: width * 0.9,
     alignSelf: 'center',
-    position: 'absolute',
-    bottom: HDP(50),
   },
   showTrigger: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  floater: {
+    position: 'absolute',
+    bottom: HDP(0),
+    paddingBottom: HDP(100),
+    paddingTop: HDP(50),
+    width,
+    // backgroundColor: '#ffffff',
   },
 });
 
