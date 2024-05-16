@@ -40,7 +40,6 @@ export const Profile: FC = ({navigation}: any) => {
   const DEBOUNCE_DURATION = 500;
 
   const handlePhotoChange = async (txt: string) => {
-    console.log('triggering');
     try {
       const updatedUserData = {...user, image: txt};
       await StorageHelper.saveItem(

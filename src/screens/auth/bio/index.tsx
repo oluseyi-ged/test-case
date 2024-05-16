@@ -194,8 +194,6 @@ export const Bio: FC = ({navigation}: any) => {
           radius={128}
           onPress={() => {
             formRef?.current?.handleSubmit();
-            console.log('load up');
-            console.log(formRef?.current?.errors, 'marking');
           }}
           // onPress={() => navigation.navigate('AddAccounts')}
           justifyContent="center"

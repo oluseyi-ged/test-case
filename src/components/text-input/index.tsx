@@ -108,7 +108,6 @@ export const TextInput: FC<Props> = ({
   const [formattedValue, setFormattedValue] = useState(value);
 
   useEffect(() => {
-    console.log(value);
     if (value) {
       setValueText(value.length);
     }

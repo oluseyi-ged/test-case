@@ -10,8 +10,6 @@ import style from './styles';
 export const SplashScreen: FC = ({navigation}: any) => {
   const [user, setUser] = useState<any>({});
 
-  console.log(user);
-
   useFocusEffect(
     React.useCallback(() => {
       const fetchUserData = async () => {
