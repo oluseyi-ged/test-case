@@ -12,6 +12,8 @@ import styles from './styles';
 export const Bio: FC = ({navigation}: any) => {
   const [showOpt, setShowOpt] = useState(false);
   const [photo, setPhoto] = useState<any>('');
+  const [naming, setNaming] = useState('');
+  const [desc, setDesc] = useState('');
   const formRef = useRef<any>();
 
   const initialValues = {
@@ -166,6 +168,7 @@ export const Bio: FC = ({navigation}: any) => {
               <TextInput
                 onChangeText={value => {
                   setFieldValue('name', value);
+                  setNaming(value);
                 }}
                 placeholder="Name"
                 error={errors.name}
@@ -176,6 +179,7 @@ export const Bio: FC = ({navigation}: any) => {
               <TextInput
                 onChangeText={value => {
                   setFieldValue('bio', value);
+                  setDesc(value);
                 }}
                 placeholder="Bio"
                 charLength={30}
@@ -195,7 +199,7 @@ export const Bio: FC = ({navigation}: any) => {
           onPress={() => {
             formRef?.current?.handleSubmit();
           }}
-          // onPress={() => navigation.navigate('AddAccounts')}
+          disabled={!naming?.length || !desc?.length || !photo?.length}
           justifyContent="center"
           alignItems="center"
           color="#151515"

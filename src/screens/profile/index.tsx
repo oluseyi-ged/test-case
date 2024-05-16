@@ -4,7 +4,7 @@ import {HDP} from '@helpers';
 import StorageHelper from '@helpers/StorageHelper';
 import {debounce} from 'lodash';
 import React, {FC, useEffect, useState} from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
+import {ActivityIndicator, Image, TouchableOpacity, View} from 'react-native';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import styles from './styles';
 
@@ -222,7 +222,9 @@ export const Profile: FC = ({navigation}: any) => {
           ) : null}
           <SizedBox height={32} />
 
-          {!loading && (
+          {loading ? (
+            <ActivityIndicator color={'#000'} size="large" />
+          ) : (
             <>
               <TextInput
                 onChangeText={handleUsernameChange}

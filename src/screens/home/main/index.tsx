@@ -332,15 +332,18 @@ export const Home: FC = ({navigation}: any) => {
                     placeholder="Select a Platform"
                     placeholderStyle={{color: '#8B8B8B'}}
                     containerStyle={styles.dropBox}
-                    renderLeftIcon={() => (
-                      <>
+                    renderLeftIcon={() => {
+                      if (!newIcon && !selected?.name) {
+                        return null;
+                      }
+                      return (
                         <SvgIcon
                           name={newIcon || selected?.name}
                           size={40}
                           containerStyle={{marginRight: HDP(16)}}
                         />
-                      </>
-                    )}
+                      );
+                    }}
                     renderRightIcon={() => (
                       <>
                         <SvgIcon name="caret-down" size={18} />

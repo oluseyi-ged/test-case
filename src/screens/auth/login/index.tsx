@@ -2,11 +2,13 @@
 import {Block, Button, SizedBox, SvgIcon, Text, TextInput} from '@components';
 import StorageHelper from '@helpers/StorageHelper';
 import {Formik} from 'formik';
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import * as yup from 'yup';
 import styles from './styles';
 
 export const Login: FC = ({navigation}: any) => {
+  const [ident, setIdent] = useState('');
+  const [key, setKey] = useState('');
   const initialValues = {
     identifier: '',
     password: '',
@@ -15,8 +17,15 @@ export const Login: FC = ({navigation}: any) => {
   const initSchema = yup.object().shape({
     identifier: yup
       .string()
-      .email('Invalid email')
-      .required('Email is required'),
+      .required('Email or Phone Number is required')
+      .test('phone-or-email', 'Invalid email or phone number', value => {
+        if (!value) return false; // Reject empty value
+        // Check if the input matches email format
+        if (/\S+@\S+\.\S+/.test(value)) return true; // Email format
+        // Check if the input matches phone number format
+        if (/^\d+$/.test(value) && value.length >= 6) return true; // Phone number format
+        return false; // Neither email nor phone number
+      }),
     password: yup
       .string()
       .min(8, 'Password must be at least 8 characters')
@@ -71,8 +80,9 @@ export const Login: FC = ({navigation}: any) => {
                 <TextInput
                   onChangeText={value => {
                     setFieldValue('identifier', value);
+                    setIdent(value);
                   }}
-                  placeholder="Email"
+                  placeholder="Email or Phone Number"
                   error={errors.identifier}
                   value={values.identifier}
                   autoCorrect={false}
@@ -81,6 +91,7 @@ export const Login: FC = ({navigation}: any) => {
                 <TextInput
                   onChangeText={value => {
                     setFieldValue('password', value);
+                    setKey(value);
                   }}
                   placeholder="Password"
                   error={errors.password}
@@ -97,6 +108,7 @@ export const Login: FC = ({navigation}: any) => {
                   alignItems="center"
                   color="#151515"
                   title="Create Account"
+                  disabled={!ident?.length || !key?.length}
                 />
               </>
             )}

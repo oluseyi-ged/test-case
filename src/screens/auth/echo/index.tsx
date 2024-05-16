@@ -3,13 +3,14 @@ import {LogoGif} from '@assets/images';
 import {Block, Button, SizedBox, SvgIcon, Text, TextInput} from '@components';
 import StorageHelper from '@helpers/StorageHelper';
 import {Formik} from 'formik';
-import React, {FC, useRef} from 'react';
+import React, {FC, useRef, useState} from 'react';
 import {Image} from 'react-native';
 import * as yup from 'yup';
 import styles from './styles';
 
 export const Echo: FC = ({navigation}: any) => {
   const formRef = useRef<any>();
+  const [username, setUsername] = useState('');
 
   const initialValues = {
     username: '',
@@ -67,6 +68,7 @@ export const Echo: FC = ({navigation}: any) => {
                 <TextInput
                   onChangeText={value => {
                     setFieldValue('username', value);
+                    setUsername(value);
                   }}
                   placeholder="your-echo"
                   charLength={20}
@@ -86,6 +88,7 @@ export const Echo: FC = ({navigation}: any) => {
           color="#151515"
           style={styles.btn}
           title="Claim"
+          disabled={!username?.length}
         />
       </Block>
     </Block>
